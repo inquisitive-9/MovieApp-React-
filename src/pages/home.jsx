@@ -1,4 +1,4 @@
-import moviecard from "../components/moviecard";
+import Moviecard from "../component/moviecard";
 import { useState } from "react";   
 
 function Home(){
@@ -12,7 +12,7 @@ function Home(){
     ];
 
     const handleSearch = (e) => {
-        e.preventDefaut()
+        e.preventDefault();
         alert(searchQuery);
         setSearchQuery("");
     }
@@ -31,11 +31,11 @@ function Home(){
             {movies.map(
                 (movie) => 
                  movie.title.toLowerCase().startsWith(searchQuery)&&(
-                    <moviecard movie= {movie} key={movie.id} />
+                    <Moviecard movie= {movie} key={movie.id} />
                 )
                 )}
         </div>
     </div>
     );
 }
-export default home;
+export default Home;
